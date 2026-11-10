@@ -1,0 +1,71 @@
+@import "../index.css";
+
+.auth-root {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-form-root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accent-bg);
+    border: 3px solid var(--accent-border);
+    border-radius: 10px;
+    min-width: 30%;
+    min-height: 30%;
+    padding: 1%;
+}
+
+.auth-form-root form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.auth-form-root label {
+    align-self: flex-start;
+    margin-left: 12%
+}
+
+.auth-form-root button, .auth-form-root input{
+    width: 80%;
+    margin-top: 0.5%;
+    margin-bottom: 3%;
+    margin-left: 0px;
+    margin-right: 0px;
+
+    border-radius: 6px;
+    height: auto;
+    padding-top:    0.4rem;
+    padding-bottom: 0.4rem;
+    border: 2px solid rgb(129, 127, 126);
+    font-size: large;
+}
+
+.auth-form-root button {
+    cursor: pointer;
+}
+
+.auth-toggle {
+    border: 2px solid var(--accent-border) !important;
+    background-color: var(--accent-bg) !important ;
+    color: var(--accent) !important ;
+    font-weight: 500 !important;
+}
+
+.auth-toggle:hover {
+    background-color: var(--accent);
+    color: var(--text-h);
+}
+
+.error {
+    color: rgb(211, 0, 0);
+    font-weight: bold;
+}
+

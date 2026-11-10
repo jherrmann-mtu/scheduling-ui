@@ -1,26 +1,28 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import './App.css'
+import { useContext } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { AuthContext } from './api/AuthContext';
+import './App.css';
+import AuthPage from './auth/AuthPage';
 import Home from './pages/Home';
+import Create from './pages/Create';
 
 function App() {
+  const { token } = useContext(AuthContext)
 
+  if (token === "") {
+    return <AuthPage />
+  }
+
+  
   return (
     <BrowserRouter>
-      <div className="app-root">
-        <nav>
-          <Link to="/">Home</Link>
-          <Link to="/away">Away</Link>
-        </nav>
-      </div>
-
       <main className="content">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/away" element={<p>Away</p>} />
+          <Route path="/create" element={<Create />} />
         </Routes>
       </main>
-    </BrowserRouter>
-  )
+    </BrowserRouter>)
 }
 
 export default App
