@@ -1,13 +1,12 @@
 import { useContext, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
+import toast, { Toaster } from 'react-hot-toast';
 import type { AppointmentRequest } from '../api/ApiModel';
+import ApiRequest from '../api/ApiRequest';
 import { AuthContext } from '../api/AuthContext';
 import AppointmentDisplay from '../components/AppointmentDisplay';
 import './Create.css';
-import ApiRequest from '../api/ApiRequest';
-import { Link } from 'react-router-dom';
-import toast, { Toaster } from 'react-hot-toast';
 
 function nearestFiveMinute() {
     let date = new Date();
@@ -90,7 +89,6 @@ function Create() {
         <Toaster position="top-center" reverseOrder={false} />
         <div className="title-box">
             <h1>Create Appointment</h1>
-            <Link to="/" className="return"><h2>Home</h2></Link>
         </div>
         <div className="create-root">
             <div className="form">

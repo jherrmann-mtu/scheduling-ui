@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { AuthContext } from './api/AuthContext';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import { AuthContext, clearAuth } from './api/AuthContext';
 import './App.css';
 import AuthPage from './auth/AuthPage';
 import Home from './pages/Home';
@@ -16,6 +16,14 @@ function App() {
   
   return (
     <BrowserRouter>
+      <div className="nav-container">
+        <nav>
+          <Link className="nav-item" to="/">Home</Link>
+          <Link className="nav-item" to="/create">Create Appointment</Link>
+          <button className="nav-item" onClick={clearAuth}>Logout</button>
+        </nav>
+      </div>
+
       <main className="content">
         <Routes>
           <Route path="/" element={<Home />} />
