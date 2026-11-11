@@ -1,0 +1,19 @@
+.spinner {
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner svg {
+    animation: spin 0.75s linear infinite;
+}
